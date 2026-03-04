@@ -23,7 +23,7 @@ app.use("/recipes", recipeRoutes);
 
 connectDB().then(() => {
     app.listen(port, () => {
-        console.log(`http://localhost:${port}`)
+        console.log(`http://localhost:${port}/recipes`)
     })
 })
 
