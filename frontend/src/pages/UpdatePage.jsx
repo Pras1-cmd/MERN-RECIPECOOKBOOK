@@ -24,7 +24,7 @@ function UpdatePage() {
 
   const fetchRecipe = async () => {
     try {
-      const res = await API.get(`/${id}`);
+      const res = await API.get(`/recipes/${id}`);
       const data = res.data;
       setForm({
         title: data.title || "",
@@ -45,7 +45,7 @@ function UpdatePage() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await API.put(`/${id}`, {
+      await API.put(`/recipes/${id}`, {
         title: form.title,
         description: form.description,
         ingredients: toArrayFromCSV(form.ingredients),
@@ -64,7 +64,7 @@ function UpdatePage() {
   const handleDelete = async () => {
     if (!confirm("Delete this recipe?")) return;
     try {
-      await API.delete(`/${id}`);
+      await API.delete(`/recipes/${id}`);
       toast.success("Recipe deleted");
       navigate("/");
     } catch (e) {
