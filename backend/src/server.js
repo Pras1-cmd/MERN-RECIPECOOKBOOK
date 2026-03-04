@@ -11,19 +11,19 @@ const app = express();
 const port = process.env.PORT || 3001;
 
 app.use(cors({
-  //origin: "http://localhost:5173"
+  origin: "http://localhost:5173"
 }));
 
 app.use(express.json())
 app.use("/recipes", recipeRoutes);
 
-//app.get("/", (req, res) => {
-//  res.send("Recipe is running successfully");
-//});
+app.get("/", (req, res) => {
+  res.send("Recipe is running successfully");
+});
 
 connectDB().then(() => {
     app.listen(port, () => {
-        console.log(`http://localhost:${port}/recipes`)
+        console.log(`http://localhost:${port}`)
     })
 })
 
