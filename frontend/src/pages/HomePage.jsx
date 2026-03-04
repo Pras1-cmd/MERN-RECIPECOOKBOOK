@@ -19,7 +19,7 @@ function HomePage() {
   const fetchRecipes = async () => {
     try {
       setLoading(true);
-      const res = await API.get(`/?search=${encodeURIComponent(search)}&category=${encodeURIComponent(category)}`);
+      const res = await API.get(`/recipes?search=${encodeURIComponent(search)}&category=${encodeURIComponent(category)}`);
       setRecipes(res.data.recipes || []);
       setTotal(res.data.total || (res.data.recipes || []).length);
     } catch (e) {
@@ -32,7 +32,7 @@ function HomePage() {
   const handleDelete = async (id) => {
     if (!confirm("Delete this recipe?")) return;
     try {
-      await API.delete(`/${id}`);
+      await API.delete(`/recipes/${id}`);
       toast.success("Recipe deleted");
       fetchRecipes();
     } catch (e) {
