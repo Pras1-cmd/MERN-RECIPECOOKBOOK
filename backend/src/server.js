@@ -17,13 +17,13 @@ app.use(cors({
 app.use(express.json())
 app.use("/recipes", recipeRoutes);
 
-app.get("/", (req, res) => {
-  res.send("Recipe is running successfully");
-});
+//app.get("/", (req, res) => {
+ // res.send("Recipe is running successfully");
+//});
 
 connectDB().then(() => {
     app.listen(port, () => {
-        console.log(`http://localhost:${port}`)
+        console.log(`http://localhost:${port}/recipes`)
     })
 })
 
