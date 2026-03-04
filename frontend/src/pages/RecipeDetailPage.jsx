@@ -16,7 +16,7 @@ function RecipeDetailPage() {
   const fetchRecipe = async () => {
     try {
       setLoading(true);
-      const res = await API.get(`/${id}`);
+      const res = await API.get(`/recipes/${id}`);
       setRecipe(res.data);
     } catch (e) {
       toast.error("Failed to load recipe");
