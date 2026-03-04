@@ -22,7 +22,7 @@ function CreatePage() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await API.post("/", {
+      await API.post("/recipes", {
         title: form.title,
         description: form.description,
         ingredients: toArrayFromCSV(form.ingredients),
