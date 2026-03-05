@@ -1,40 +1,154 @@
 # MERN Recipe Cookbook
 
-## Overview
-The MERN Recipe Cookbook is a full-stack application built using the MERN (MongoDB, Express, React, Node.js) stack. It allows users to browse, create, and manage recipes with ease.
+A full-stack recipe management application built with the MERN (MongoDB, Express, React, Node.js) stack. This project provides users with the ability to create, view, update, and delete recipes through a modern web interface backed by a RESTful API.
 
-## Enhanced Features
-- User authentication with JWT
-- Recipe CRUD operations
-- User-friendly recipe submission
-- In-depth recipe details view
-- Comments and reviews for recipes
+## 🧩 Features
 
-## Better Structure
-The application is structured into client and server sections, with clear separation of concerns and modular components to enhance maintainability.
+- **User-friendly interface** built with React and Vite
+- **CRUD operations** for recipes (Create, Read, Update, Delete)
+- **Responsive design** using Tailwind CSS
+- **API server** powered by Node.js and Express
+- **MongoDB database** for storing recipe data
+- **Reusable components** and centralized state management
+- **Error handling and loading states** with custom components
 
-## API Endpoints Documentation
-### Recipes
-- **GET /api/recipes**: Retrieve all recipes
-- **GET /api/recipes/:id**: Retrieve a recipe by ID
-- **POST /api/recipes**: Create a new recipe
-- **PUT /api/recipes/:id**: Update an existing recipe
-- **DELETE /api/recipes/:id**: Delete a recipe
+## 🔧 Project Structure
 
-### Users
-- **POST /api/users/register**: Register a new user
-- **POST /api/users/login**: Login an existing user
+```
+package.json
+backend/
+  package.json
+  src/
+    server.js
+    config/
+      db.js
+    controllers/
+      recipeController.js
+    models/
+      recipeModel.js
+    routes/
+      recipeRoutes.js
+frontend/
+  eslint.config.js
+  index.html
+  package.json
+  postcss.config.js
+  README.md
+  tailwind.config.js
+  vite.config.js
+  public/
+  src/
+    App.jsx
+    index.css
+    main.jsx
+    components/
+      Loader.jsx
+      Navbar.jsx
+      RecipeCard.jsx
+      RecipeNotFound.jsx
+    lib/
+      axios.js
+      utils.js
+    pages/
+      CreatePage.jsx
+      HomePage.jsx
+      RecipeDetailPage.jsx
+      UpdatePage.jsx
+```
 
-## Troubleshooting Guide
-If you encounter issues:
-1. Ensure all environment variables are set correctly.
-2. Check the server logs for detailed error messages.
-3. If the front-end is not loading, verify the React development server is running.
+## 🚀 Getting Started
 
-## Contact Information
-For queries or support, please reach out to:
-- Email: support@recipeapp.com
-- GitHub: [Pras1-cmd](https://github.com/Pras1-cmd)
+Follow these steps to run the project locally.
 
-## License
-This project is licensed under the MIT License.
+### Prerequisites
+
+- Node.js (v16 or later)
+- npm or yarn
+- MongoDB instance (local or hosted)
+
+### Installation
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/yourusername/mern-recipecookbook.git
+   cd mern-recipecookbook
+   ```
+
+2. **Setup backend**
+   ```bash
+   cd backend
+   npm install
+   # or yarn install
+   ```
+   Create a `.env` file with the following variables:
+   ```env
+   MONGO_URI=your_mongodb_connection_string
+   PORT=3000
+   ```
+
+3. **Start backend server**
+   ```bash
+   npm run dev
+   ```
+   The API will be available at `http://localhost:3000`
+
+4. **Setup frontend**
+   ```bash
+   cd ../frontend
+   npm install
+   # or yarn install
+   ```
+
+5. **Start frontend development server**
+   ```bash
+   npm run dev
+   ```
+   Open `http://localhost:5173` (or the URL shown in your terminal) to view the app.
+
+## 🛠️ Available Scripts
+
+### Backend
+- `npm run dev` - start server with nodemon
+- `npm start` - start server normally
+
+### Frontend
+- `npm run dev` - start Vite development server
+- `npm run build` - build production assets
+- `npm run preview` - locally preview production build
+
+## 📦 Dependencies
+
+Check `package.json` files in `backend` and `frontend` for full dependency listings. Key libraries include:
+
+- **Backend:** express, mongoose, dotenv, cors, nodemon (dev)
+- **Frontend:** react, react-dom, react-router-dom, axios, tailwindcss, vite
+
+## 💡 Usage
+
+- Add a recipe with title, ingredients, instructions, and image URL
+- Browse existing recipes on the homepage
+- Click a recipe to view details or edit
+- Update or delete recipes as needed
+
+## 📁 Configuration
+
+- **Database:** Update `backend/src/config/db.js` to match your MongoDB connection
+- **API Base URL:** Adjust in `frontend/src/lib/axios.js` if backend runs on a different port or host
+
+## ✅ Contributing
+
+Contributions are welcome! Please:
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/YourFeature`)
+3. Commit your changes (`git commit -m 'Add some feature'`)
+4. Push to the branch (`git push origin feature/YourFeature`)
+5. Open a pull request
+
+## 📄 License
+
+This project is licensed under the MIT License. See the `LICENSE` file for details.
+
+## 📞 Contact
+
+For questions or support, reach out to [chmcs2026.prasenjit.singh@gmail.com] or open an issue on GitHub.
